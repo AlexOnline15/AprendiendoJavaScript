@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            /*Crea un programa en JavaScript que realice las siguientes acciones:
+Pide al usuario su nombre y su edad.
+Si la edad es mayor o igual a 18, felicítalo por ser mayor de edad, de lo contrario, indícale que aún es n
+Calcula cuántos años le faltan para llegar a 100 y muestra un mensaje con el resultado.
+Usa un bucle for para mostrar los números del 1 al 10.
+Genera un número aleatorio entre 1 y 10 y permite al usuario intentar adivinarlo en un máximo de 3 intento
+*/
+
+//Pide al usuario su nombre y su edad
+let nombre=prompt("Cuál es tu nombre");
+let edad=parseInt(prompt("Cuál es tu edad"));
+
+//Muestra un mensaje según si es mayor o menor de edad
+if(edad>=18){
+    console.log("Eres mayor de edad")
+} else {
+    console.log("Aún eres menor de edad")
+}
+
+//Calcula y muestra cuántos años faltan para llegar a los 100
+let añosPara100=100-edad;
+console.log(`Te faltan ${añosPara100} años para los 100`);
+
+//Mostrar los números del 1 al 10
+for(i=1;i<=10;i++){
+    console.log(i);
+}
+//Math.random --> genera un número aleatorio entre 0 y 1 
+//Math.floor --> redondea hacia abajo un número aleatorio
+
+//Generamos un número aleatorio
+let numeroAleatorio=Math.floor(Math.random()*10)
+
+//Permite al usuario adivinar el número en un máximo de 3 intentos
+let intentos=3;
+for(let i=1;i<=intentos;i++){
+    let adivinanza=parseInt(prompt("Adivina el número: "));
+    if(adivinanza===numeroAleatorio){
+        console.log("Correcto");
+        break; //salimos del bucle
+    } else {
+        console.log("Número incorrecto. Intente de nuevo");
+    }
+    //Si se han agotado los intentos
+    if(i===intentos){
+        console.log(`Sin intentos. El número aleatorio era ${numeroAleatorio}`)
+    }
+}   
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numeroIngresado=parseInt(prompt("Ingresa un número entero positivo"));
+        if(!isNaN(numeroIngresado)&&numeroIngresado>0){
+            let contadorNumerosPrimos=0;
+            for(let i=2;i<=numeroIngresado;i++){
+                let esPrimo=true;
+                //Creamos un bucle que compruebe que los números anteriores no sean divisibles
+                for(let j=2;j<i;j++){
+                    if(i%j===0) {
+                        esPrimo=false;
+                        break;
+                }
+            }
+            if(esPrimo) contadorNumerosPrimos++;
+        }
+        console.log("En el rango del 1 al 1 "+numeroIngresado+" hay "+contadorNumerosPrimos+" numeros primos")
+
+    }else{
+        console.log("Ingresa un número entero positivo válido")
+    }
+    </script>
+</body>
+</html>
